@@ -1,0 +1,59 @@
+1. Buatlah program yang menampilkan Data Diri dengan atribut: Nama, Kelas, NIM, Jurusan, Fakultas, dan Kampus dengan menerapkan konsep PBO (Class, Object, Constructor)
+
+lass DataDiri:
+    def __init__(self, nama, kelas, nim, jurusan, fakultas, kampus):
+        self.nama = nama
+        self.kelas = kelas
+        self.nim = nim
+        self.jurusan = jurusan
+        self.fakultas = fakultas
+        self.kampus = kampus
+
+    def tampilkan_data_diri(self):
+        print("Nama:", self.nama)
+        print("Kelas:", self.kelas)
+        print("NIM:", self.nim)
+        print("Jurusan:", self.jurusan)
+        print("Fakultas:", self.fakultas)
+        print("Kampus:", self.kampus)
+
+my_data_diri = DataDiri("Arfian Putra Pratama", "2023 A", "23091397001", "Manajemen Informatika", "Fakultas Vokasir", "Universitas Negeri Surabaya")
+my_data_diri.tampilkan_data_diri()
+
+2. Buatlah program yang menampilkan Turle, bergerak segitiga dimana juga menerapkan konsep PBO (Class, Object, Constructor)
+
+import turtle
+
+class MyTurtle:
+    def __init__(self, color, shape):
+        # Membuat objek turtle
+        self.t = turtle.Turtle() # Object dari class Turtle
+        self.t.color(color) # Mengatur warna turtle
+        self.t.shape(shape) # Mengatur bentuk turtle
+
+    def maju(self, jarak):
+        # Method untuk menggerakkan turtle maju
+        self.t.forward(jarak)
+
+    def putar_kanan(self, sudut):
+        # Method untuk memutar turtle ke kanan
+        self.t.right(sudut)
+
+    def segitiga(self, ukuran):
+        # Method untuk menggambar segitiga
+        for _ in range(3):
+            self.maju(ukuran)
+            self.putar_kanan(120) # Sudut 120 derajat untuk segitiga
+
+    def selesai(self):
+        # Method untuk menyelesaikan gambar
+        turtle.done()
+
+# Membuat objek turtle dengan warna dan bentuk
+turtle1 = MyTurtle("black", "turtle")
+
+# Menggambar segitiga dengan ukuran sisi 150
+turtle1.segitiga(300)
+
+# Menyelesaikan gambar
+turtle1.selesai()
